@@ -1,20 +1,15 @@
 
 import {Injectable} from '@angular/core';
-import {AngularFirestore} from "angularfire2/firestore";
+import {AngularFirestore} from 'angularfire2/firestore';
 
 @Injectable()
 export class SettingsService {
 
-
     private storagePrefix = 'smitty_';
-
-
     constructor(
         public afStore: AngularFirestore
     ) {
         // User settings
-
-
     }
 
     getStorage (key, defaultVal?) {
@@ -25,7 +20,5 @@ export class SettingsService {
     setStorage (key, val) {
         window.localStorage.setItem(this.storagePrefix + key, JSON.stringify(val));
     }
-
-
 }
 

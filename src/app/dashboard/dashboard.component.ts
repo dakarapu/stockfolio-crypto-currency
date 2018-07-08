@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { AngularFirestore } from "angularfire2/firestore";
-import { Api } from "../services/api.service";
-import { SettingsService } from "../services/settings.service";
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Api } from '../services/api.service';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   templateUrl: './dashboard.component.html',
@@ -11,24 +11,22 @@ import { SettingsService } from "../services/settings.service";
 export class DashboardPage implements OnInit {
 
   public shares = [];
-
   public cashInfo: any;
   public sharesRef: any;
   public cashRef: any;
   public selectedShareId: any;
   public selectedShare: any;
-
   public price: any;
 
   public buyInfo = {
     buyAmount: 0,
     cashAmount: 0
-  }
+  };
 
   public sellInfo = {
     sellAmount: 0,
     cashAmount: 0
-  }
+  };
 
   public ar_amount = 0;
 
@@ -44,14 +42,11 @@ export class DashboardPage implements OnInit {
       this.cashInfo = res[0];
       console.log(this.cashInfo);
     });
-
-
     this.getSharesData().subscribe(res => {
       this.shares = res;
       console.log(this.shares);
-
       for (let i = 0; i < this.shares.length; i++) {
-        if (this.shares[i]['id'] == this.selectedShareId) {
+        if (this.shares[i]['id'] === this.selectedShareId) {
           this.selectedShare = this.shares[i];
         }
       }
@@ -60,7 +55,6 @@ export class DashboardPage implements OnInit {
 
   getBalance() {
     this.cashRef = this.afs.collection('cash');
-
     return this.cashRef.snapshotChanges().map(actions => {
       return actions.map(action => {
         const data = action.payload.doc.data();
@@ -71,9 +65,7 @@ export class DashboardPage implements OnInit {
   }
 
   getSharesData() {
-
     this.sharesRef = this.afs.collection('shares');
-
     return this.sharesRef.snapshotChanges().map(actions => {
       return actions.map(action => {
         const data = action.payload.doc.data();
@@ -86,7 +78,7 @@ export class DashboardPage implements OnInit {
   getExchangeRate(coin) {
     this.api.getExchangeRate(coin).subscribe(res => {
       this.price = res.rate;
-    })
+    });
   }
 
   selectShare(item) {
@@ -94,7 +86,6 @@ export class DashboardPage implements OnInit {
     console.log(item.id);
     this.selectedShare = item;
     this.getExchangeRate(this.selectedShare.data.name);
-
     this.setting.setStorage('sharedId', this.selectedShareId);
     this.initForm();
   }
@@ -115,54 +106,44 @@ export class DashboardPage implements OnInit {
   }
 
   addCash() {
-    let new_balance = Number(this.cashInfo.data.balance) + this.ar_amount;
-
+    const new_balance = Number(this.cashInfo.data.balance) + this.ar_amount;
     console.log(12 - 11.4);
     console.log(new_balance);
-
-    let ref = this.afs.collection('cash').doc(this.cashInfo.id);
+    const ref = this.afs.collection('cash').doc(this.cashInfo.id);
     ref.update({
       name: this.cashInfo.data.name,
       balance: new_balance
     }).then(res => {
       console.log(res);
     }).catch(err => {
-
+      console.log(err);
     });
   }
 
   removeCash() {
     if (this.cashInfo.data.balance < this.ar_amount) {
       alert('Your balance is less than ' + this.ar_amount);
-
       return;
     }
-
-
-    let new_balance = Number(this.cashInfo.data.balance) - this.ar_amount;
-
-
+    const new_balance = Number(this.cashInfo.data.balance) - this.ar_amount;
     console.log(new_balance);
-
-    let ref = this.afs.collection('cash').doc(this.cashInfo.id);
+    const ref = this.afs.collection('cash').doc(this.cashInfo.id);
     ref.update({
       name: this.cashInfo.data.name,
       balance: new_balance
     }).then(res => {
       console.log(res);
     }).catch(err => {
-
+      console.log(err);
     });
   }
 
   buyOrder() {
     console.log(this.buyInfo);
-
     if (this.buyInfo.cashAmount > this.cashInfo.data.balance) {
-      alert("You do not have enough cash");
+      alert('You do not have enough cash');
       return;
     }
-
     let ref = this.afs.collection('cash').doc(this.cashInfo.id);
     ref.update({
       name: this.cashInfo.data.name,
@@ -170,7 +151,7 @@ export class DashboardPage implements OnInit {
     }).then(res => {
       console.log(res);
     }).catch(err => {
-
+      console.log(err);
     });
 
     ref = this.afs.collection('shares').doc(this.selectedShareId);
@@ -179,19 +160,17 @@ export class DashboardPage implements OnInit {
     }).then(res => {
       console.log(res);
     }).catch(err => {
-
+      console.log(err);
     });
 
   }
 
   sellOrder() {
     console.log(this.sellInfo);
-
     if (this.sellInfo.sellAmount > this.selectedShare.data.balance) {
-      alert("You do not have enough coins");
+      alert('You do not have enough coins');
       return;
     }
-
     let ref = this.afs.collection('cash').doc(this.cashInfo.id);
     ref.update({
       name: this.cashInfo.data.name,
@@ -199,7 +178,7 @@ export class DashboardPage implements OnInit {
     }).then(res => {
       console.log(res);
     }).catch(err => {
-
+      console.log(err);
     });
 
     ref = this.afs.collection('shares').doc(this.selectedShareId);
@@ -208,7 +187,7 @@ export class DashboardPage implements OnInit {
     }).then(res => {
       console.log(res);
     }).catch(err => {
-
+      console.log(err);
     });
   }
 }

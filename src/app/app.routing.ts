@@ -3,8 +3,11 @@ import { DashboardPage } from './dashboard/dashboard.component';
 
 export const AppRoutes: Routes = [
     {
-        path: '',
-        component: DashboardPage
+      path: '',
+      component: DashboardPage
     },
-    { path: '**', redirectTo: 'home' }
+    {
+      path: '**',
+      redirectTo: 'home'
+    }
 ];

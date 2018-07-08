@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
-import {SettingsService} from "./settings.service";
+import {SettingsService} from './settings.service';
 import {MessageService} from 'primeng/components/common/messageservice';
-import {Api} from "./api.service";
+import {Api} from './api.service';
 
 
 @NgModule({
