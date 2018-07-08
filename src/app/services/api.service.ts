@@ -1,13 +1,9 @@
-/**
- * Created by ApolloYr on 1/28/2018.
- */
 
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/catch';
 import { Router } from '@angular/router';
 import { SettingsService } from "./settings.service";
 import { AngularFireAuth } from "angularfire2/auth";
-import { NotifyService } from "./notify.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import 'rxjs/add/operator/map';
@@ -22,15 +18,9 @@ export class Api {
         private router: Router,
         public settings: SettingsService,
         private fAuth: AngularFireAuth,
-        public notify: NotifyService,
         private http: HttpClient,
     ) {
 
-    }
-
-    fbLogin(info) {
-
-        return this.fAuth.auth.signInWithEmailAndPassword(info.email, info.password);
     }
 
     getExchangeRate(coin) {

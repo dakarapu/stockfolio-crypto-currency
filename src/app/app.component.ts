@@ -10,20 +10,9 @@ import {SettingsService} from "./services/settings.service";
 export class AppComponent {
     title = 'app';
 
-    constructor(private translate: TranslateService,
+    constructor(
                 public setting: SettingsService
     ) {
-        // Add languages
-        this.translate.addLangs(['en', 'pt']);
-
-        ///
-        let lang = setting.getStorage('lang', "pt");
-
-        // Set the default language
-        this.translate.setDefaultLang(lang);
-
-        // Use a language
-        this.translate.use(lang);
 
     }
 }

@@ -37,7 +37,6 @@ export class DashboardPage implements OnInit {
     public api: Api,
     public setting: SettingsService
   ) {
-    //if (this.setting.getStorage('sharedId')) this.selectedShareId = this.setting.getStorage('sharedId');
   }
 
   ngOnInit() {
@@ -57,10 +56,6 @@ export class DashboardPage implements OnInit {
         }
       }
     });
-
-
-
-    // this.getExchangeRate('BTC');
   }
 
   getBalance() {
@@ -164,7 +159,7 @@ export class DashboardPage implements OnInit {
     console.log(this.buyInfo);
 
     if (this.buyInfo.cashAmount > this.cashInfo.data.balance) {
-      alert("You don't have enough cash");
+      alert("You do not have enough cash");
       return;
     }
 
@@ -193,7 +188,7 @@ export class DashboardPage implements OnInit {
     console.log(this.sellInfo);
 
     if (this.sellInfo.sellAmount > this.selectedShare.data.balance) {
-      alert("You don't have enough coin");
+      alert("You do not have enough coins");
       return;
     }
 
