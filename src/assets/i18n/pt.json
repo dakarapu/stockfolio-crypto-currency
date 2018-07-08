@@ -1,0 +1,111 @@
+{
+    "login": {
+        "welcome": "BEM VINDO!",
+        "login": "Usuário",
+        "password": "Senha",
+        "keep_me": "Mantenha-me conectado",
+        "enter": "ENTRAR",
+        "forget_password": "Esqueceu sua senha?"
+    },
+    "home": {
+        "welcome": "BEM VINDO",
+        "logout": "Sair",
+        "title": "O QUE VAMOS FAZER?",
+        "manage_products": "Gerenciar produtos",
+        "edit_product": "Editar produto",
+        "add_product": "Adicionar produto",
+        "send_notifications": "Envie notificações aos usuários",
+        "manage_solicitations": "Gerenciar Solicitações",
+        "beans_prices": "Preços de grãos",
+        "check_new_users": "Verificar novos usuários",
+        "register_new_admin_users": "Cadastre usuários administrativos",
+        "change_password": "Alterar senha"
+    },
+    "common": {
+        "contact_us": "Ouvidoria",
+        "save": "SALVAR",
+        "cancel": "CANCELAR",
+        "send": "ENVIAR",
+        "phone": "Telefone",
+        "soybeans": "Soja",
+        "corn": "Milho",
+        "wheat": "Trigo",
+        "rice": "Arroz",
+        "owned_area": "Área própria (ha):",
+        "leased_ared": "Área arrendada (ha):"
+    },
+    "change_password": {
+        "current_password": "Senha atual",
+        "new_password": "Nova senha",
+        "confirm_password": "Repita a nova senha",
+        "type_your_current_password": "Digite sua senha atual",
+        "add_your_new_password": "Digite a senha nova",
+        "repeat_password": "Repita nova senha"
+    },
+    "register_admin": {
+        "name": "Nome",
+        "email": "E-mail",
+        "password": "Senha",
+        "add_user_name": "Digite o nome do usuário",
+        "add_email": "Digite o e-mail do usuário"
+    },
+    "send_notification": {
+        "write_your_message_here": "Escreva sua mensagem aqui",
+        "title": "Título",
+        "up_to_200_characters": "até 200 caracteres",
+        "send_to_all_users": "Enviar para todos os clientes",
+        "send_to_ios_users": "Enviar a todos IOS",
+        "send_to_android_users": "Enviar a todos Android",
+        "send_to_single_user": "Enviar a cliente específico",
+        "client": "Cliente"
+    },
+    "manage_solicitation": {
+        "date": "DATA",
+        "id": "CPF",
+        "phone_number": "TELEFONE",
+        "product": "PRODUTO",
+        "amount": "QUANTIA",
+        "status": "STATUS"
+    },
+    "beans_price": {
+        "soybeans": "SOJA",
+        "corn": "MILHO",
+        "wheat": "TRIGO",
+        "rice": "ARROZ",
+        "price_per_bag": "Preço por saca",
+        "bag_per_hectare": "Sacas por hectare",
+        "owned_area": "Área própria (ha)",
+        "leased_area": "Área arrendada (ha)"
+    },
+    "register_product": {
+        "product_name": "Nome do produto:",
+        "monthly_charges": "Taxa de juros mensal:",
+        "iof": "IOF:",
+        "additional_iof": "IOF adicional:",
+        "tlc_regular": "TLC Padrão:",
+        "tlc_minimum": "TLC Mínima:",
+        "tlc_maximum": "TLC Máxima:",
+        "minimum_amount_for_loan": "Valor mínimo para empréstimo:",
+        "maximum_amount_for_loan": "Valor máximo para empréstimo:",
+        "maximum_amount_of_days_for_loan_release": "Mínimo de dias necessários para liberação do dinheiro:",
+        "minimum_amount_of_months_for_loan_payment": "Máximo de dias para quitação do empréstimo:",
+        "starting_date_and_hour_to_release": "Data e hora inicial da vigência desse produto:",
+        "expiration_date_and_hour": "Data e hora final da vigência desse produto:"
+    },
+    "check_new_user": {
+        "select_your_research_date": "Por favor selecione a data de busca.",
+        "start_date": "Data inicial",
+        "end_date": "Data Final",
+        "date": "DATA",
+        "id": "CPF",
+        "phone_number": "TELEFONE"
+    },
+    "manage_product": {
+        "name": "Nome",
+        "expiration": "Data final",
+        "starting": "Data inicial",
+        "action": "Ação",
+        "edit": "edit",
+        "add_new_product": "novo produto"
+    }
+}

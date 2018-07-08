@@ -1,0 +1,111 @@
+{
+    "login" : {
+        "welcome": "welcome!",
+        "login": "login",
+        "password": "password",
+        "keep_me": "Keep me logged in",
+        "enter": "ENTER",
+        "forget_password": "Forget Password?"
+    },
+    "home": {
+        "welcome": "WELCOME",
+        "logout": "Logout",
+        "title": "what are we doing today?",
+        "manage_products": "Manage products",
+        "edit_product": "Edit product",
+        "add_product": "Add product",
+        "send_notifications": "Send notification",
+        "manage_solicitations": "Manage solicitations",
+        "beans_prices": "Beans prices",
+        "check_new_users": "Check new users",
+        "register_new_admin_users": "Registernew adm - users",
+        "change_password": "Chnage password"
+    },
+    "common": {
+        "contact_us": "Contact us",
+        "save": "SAVE",
+        "cancel": "CANCEL",
+        "send": "SEND",
+        "phone": "Phone",
+        "soybeans": "Soybeans",
+        "corn": "Corn",
+        "wheat": "Wheat",
+        "rice": "Rice",
+        "owned_area": "Owned area (ha):",
+        "leased_ared": "Leased area (ha):"
+    },
+    "change_password": {
+        "current_password": "Current password",
+        "new_password": "New password",
+        "confirm_password": "Repeat new password",
+        "type_your_current_password": "Type your current password",
+        "add_your_new_password": "Add your new password",
+        "repeat_password": "Repeat password"
+    },
+    "register_admin": {
+        "name": "Name",
+        "email": "E-mail",
+        "password": "password",
+        "add_user_name": "Add user name",
+        "add_email": "Add e-mail"
+    },
+    "send_notification": {
+        "write_your_message_here": "Write your message here",
+        "title": "Title",
+        "up_to_200_characters": "up to 200 characters",
+        "send_to_all_users": "Send to all users",
+        "send_to_ios_users": "Send to IOS users",
+        "send_to_android_users": "Send to Android users",
+        "send_to_single_user": "Send to a single user",
+        "client": "Client"
+    },
+    "manage_solicitation": {
+        "date": "DATE",
+        "id": "ID",
+        "phone_number": "PHONE NUMBER",
+        "product": "PRODUCT",
+        "amount": "AMOUNT",
+        "status": "STATUS"
+    },
+    "beans_price": {
+        "soybeans": "SOYBEANS",
+        "corn": "CORN",
+        "wheat": "WHEAT",
+        "rice": "RICE",
+        "price_per_bag": "Price per bag",
+        "bag_per_hectare": "Bag per hectare",
+        "owned_area": "Owned Area (ha)",
+        "leased_area": "Leased Area (ha)"
+    },
+    "register_product": {
+        "product_name": "Product name:",
+        "monthly_charges": "Monthly charges:",
+        "iof": "IOF:",
+        "additional_iof": "Additional IOF:",
+        "tlc_regular": "TLC Regular:",
+        "tlc_minimum": "TLC Minimum:",
+        "tlc_maximum": "TLC Maximum:",
+        "minimum_amount_for_loan": "Minimum amount for loan:",
+        "maximum_amount_for_loan": "Maximum amount for loan:",
+        "maximum_amount_of_days_for_loan_release": "Maximum amount of days for loan release:",
+        "minimum_amount_of_months_for_loan_payment": "Minimum amount of months for loan payment:",
+        "starting_date_and_hour_to_release": "Starting date and hour to release:",
+        "expiration_date_and_hour": "Expiration date and hour:"
+    },
+    "check_new_user": {
+        "select_your_research_date": "Please select your research date.",
+        "start_date": "Start date",
+        "end_date": "End date",
+        "date": "DATE",
+        "id": "ID",
+        "phone_number": "PHONE NUMBER"
+    },
+    "manage_product": {
+        "name": "Name",
+        "expiration": "Expiration",
+        "starting": "Starting",
+        "action": "Action",
+        "edit": "edit",
+        "add_new_product": "add new product"
+    }
+}

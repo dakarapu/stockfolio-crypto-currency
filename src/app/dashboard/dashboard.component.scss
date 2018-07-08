@@ -1,0 +1,28 @@
+.wrapper {
+  padding-top: 100px;
+}
+
+.balance {
+  font-size: 24px;
+}
+
+.form-wrapper {
+  padding: 20px;
+  border: 1px solid lightblue;
+
+  &.sell-form {
+    border: 1px solid darksalmon;
+  }
+}
+
+.title {
+  font-size: 20px;
+}
+
+.main-wrapper {
+  margin-top: 100px;
+}
+
+.add-remove {
+  margin-top: 70px;
+}

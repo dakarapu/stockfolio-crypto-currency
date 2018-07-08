@@ -1,0 +1,42 @@
+<div id="page-login" fxFlexFill>
+    <div fxFlexFill fxLayoutAlign="center center" fxLayout="column" class="wrapper">
+        <div class="title">
+            <h2 class="text-uppercase font-weight-bold">{{"login.welcome" | translate}}</h2>
+        </div>
+        <div class="logo">
+            <img src="assets/images/logo.png">
+        </div>
+
+        <form [formGroup]="loginForm" class="login-form">
+            <div class="item-wrapper" [ngClass]="validate.displayFieldCss(loginForm, 'email')">
+                <input [placeholder]="'login.login' | translate" name="email" [(ngModel)]="loginInfo.email"
+                       formControlName="email">
+                <span class="error">required</span>
+            </div>
+            <div class="item-wrapper" [ngClass]="validate.displayFieldCss(loginForm, 'password')">
+                <input [placeholder]="'login.password' | translate" name="password" [(ngModel)]="loginInfo.password"
+                       formControlName="password" type="password">
+                <span class="error">required</span>
+            </div>
+
+            <div class="item-wrapper text-center pt-1 pb-4">
+                <mat-slide-toggle [(ngModel)]="loginInfo.remember" formControlName="remember">{{'login.keep_me' | translate}}</mat-slide-toggle>
+            </div>
+
+            <div class="item-wrapper">
+                <button class="submit-btn" (click)="login()">{{'login.enter' | translate}}</button>
+            </div>
+        </form>
+
+        <div class="forget-password">
+            <a (click)="forgotPassword()">{{'login.forget_password' | translate}}</a>
+        </div>
+
+        <div class="bottom">
+            <img src="assets/images/logo1.png">
+        </div>
+    </div>
+
+
+</div>
+

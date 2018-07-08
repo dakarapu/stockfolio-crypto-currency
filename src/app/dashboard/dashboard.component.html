@@ -1,0 +1,122 @@
+<div class="container wrapper">
+  <div class="row">
+    <div class="col-10">
+      <div class="row">
+        <div class="col-5 balance">
+          <a class="">USD: {{cashInfo ? cashInfo.data.balance: ''}}</a>
+          <!-- <a> {{selectedShare ? ', ' + selectedShare.data.name + ': ' + selectedShare.data.balance : ''}}</a> -->
+        </div>
+
+        <div class="col-7 text-right">
+          <button type="button" *ngFor="let item of shares" class="btn mr-3" [ngClass]="{ 'btn-success': item.id == selectedShareId, 'btn-outline-success': item.id != selectedShareId}"
+            (click)="selectShare(item)">{{item.data.name}}</button>
+        </div>
+      </div>
+
+      <div class="row main-wrapper" *ngIf="selectedShare">
+        <div class="col-6 buy-form">
+          <div class="title">Buy {{selectedShare ? selectedShare.data.name : ''}}</div>
+
+          <div class="form-wrapper mt-2">
+            <div class="row">
+              <div class="col-4">
+                <label>Buy Amount: </label>
+              </div>
+              <div class="col-8">
+                <input class="form-control" (ngModelChange)="changeBuyOrderAmount()" [(ngModel)]="buyInfo.buyAmount" type="number">
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-4">
+                <label>Price: </label>
+              </div>
+              <div class="col-8">
+                {{price}}
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-4">
+                <label>Total: </label>
+              </div>
+              <div class="col-8">
+                {{buyInfo.cashAmount}} USD
+              </div>
+            </div>
+
+            <div class="mt-2">
+              <button type="button" class="btn btn-primary" (click)="buyOrder()">Place Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 sell-form">
+          <div class="title">Sell {{selectedShare ? selectedShare.data.name : ''}}</div>
+
+          <div class="form-wrapper mt-2 sell-form">
+            <div class="row">
+              <div class="col-4">
+                <label>Sell Amount: </label>
+              </div>
+              <div class="col-8">
+                <input class="form-control" (ngModelChange)="changeSellOrderAmount()" [(ngModel)]="sellInfo.sellAmount" type="number">
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-4">
+                <label>Price: </label>
+              </div>
+              <div class="col-8">
+                {{price}}
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-4">
+                <label>Total: </label>
+              </div>
+              <div class="col-8">
+                {{sellInfo.cashAmount}} USD
+              </div>
+            </div>
+
+            <div class="mt-2">
+              <button type="button" class="btn btn-danger" (click)="sellOrder()">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="add-remove" *ngIf="cashInfo">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-wrapper">
+              <div class="row">
+                <div class="col-4">USD</div>
+                <div class="col-8">
+                  <input class="form-control" [(ngModel)]="ar_amount" type="number">
+                </div>
+              </div>
+              <div class="">
+                <button class="mr-2 btn btn-success" (click)="addCash()">Add</button>
+                <button class="mr-2 btn btn-danger" (click)="removeCash()">Remove</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-2">
+      <div class="balance-list">
+        <div class="" *ngFor="let item of shares">
+          <label>{{item.data.name}}: </label>
+          <label>{{item.data.balance | number: '.4-4'}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
